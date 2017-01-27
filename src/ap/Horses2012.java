@@ -12,7 +12,7 @@ public class Horses2012 {
 	// 2. try to solve part (a) on paper
 
 	// 3. make this test pass
-	@Test 
+	@Test
 	public void testHorseObject() throws Exception {
 		Horse horse = new Horse("Trigger", 1340);
 		assertEquals("Trigger", horse.getName());
@@ -32,7 +32,6 @@ public class Horses2012 {
 		assertEquals("Duke", horseBarn.getSpaces()[6].getName());
 	}
 
-
 	@Test
 	public void testPartA() throws Exception {
 		HorseBarn horseBarn = HorseBarn.createTestBarn();
@@ -40,20 +39,20 @@ public class Horses2012 {
 		assertEquals(2, horseBarn.findHorseSpace("Silver")); // 2 A horse named Silver is in space 2.
 		assertEquals(-1, horseBarn.findHorseSpace("Coco"));// -1 A horse named Coco is not in the barn
 	}
-	
-//	// 8. try to solve part (b) on paper
-//	
-//	@Test
-//	public void testPartB() throws Exception {
-//		// 9. set up the barn
-//		horseBarn.consolidate();
-//		// 10. write asserts that verify that the barn was consolidated (see page 16)
-//	}
-	
-	
+
+	// // 8. try to solve part (b) on paper
+	//
+	@Test
+	public void testPartB() throws Exception {
+		// // 9. set up the barn
+		HorseBarn horseBarn = HorseBarn.createTestBarn();
+		horseBarn.consolidate();
+		// // 10. write asserts that verify that the barn was consolidated (see page 16)
+		assertEquals(0, horseBarn.findHorseSpace("Trigger"));
+		assertEquals(1, horseBarn.findHorseSpace("Silver"));
+		assertEquals(2, horseBarn.findHorseSpace("Lady"));
+		assertEquals(3, horseBarn.findHorseSpace("Patches"));
+		assertEquals(4, horseBarn.findHorseSpace("Duke"));
+	}
 
 }
-
-
-
-
