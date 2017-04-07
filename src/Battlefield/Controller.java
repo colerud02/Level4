@@ -28,6 +28,13 @@ public class Controller implements KeyListener {
 	@Override
 	public void keyTyped(KeyEvent e) {
 		System.out.println(e.getKeyChar());
+		if (e.getKeyChar() == KeyEvent.VK_ENTER) {
+			if (model.checkLocationOnEnemyBoard(model.xCoordinate, model.yCoordinate) == true) {
+				veiw.sinkShip(veiw.getXint(), veiw.getYint());
+			} else {
+				veiw.missedShip(veiw.getXint(), veiw.getYint());
+			}
+		}
 		if (typed == false) {
 			model.setxCoordinate(e.getKeyChar());
 			updateVeiw();
