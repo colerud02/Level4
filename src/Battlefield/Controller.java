@@ -11,12 +11,24 @@ import java.awt.event.MouseListener;
 public class Controller implements KeyListener {
 	Model model;
 	Veiw veiw;
+
 	boolean typed = false;
 
 	public Controller(Model model, Veiw veiw) {
 		this.model = model;
 		this.veiw = veiw;
 		veiw.addListener(this);
+		init();
+	}
+
+	public void init() {
+		for (int i = 0; i < 10; i++) {
+			for (int j = 0; j < 10; j++) {
+				if (model.checkLocationOnPlayerBoard(i, j)) {
+					veiw.markPlayerShip(i, j);
+				}
+			}
+		}
 	}
 
 	public void updateVeiw() {

@@ -65,6 +65,7 @@ public class Veiw {
 				enemyPanel.add(enemyBoard[row][columns]);
 				playerBoard[row][columns].setOpaque(true);
 				enemyBoard[row][columns].setOpaque(true);
+				
 				playerBoard[row][columns].setBackground(Color.green);
 				enemyBoard[row][columns].setBackground(Color.orange);
 				playerPanel.setLayout(new GridLayout(10, 10));
@@ -85,6 +86,9 @@ public class Veiw {
 	}
 	public void missedShip(int x, int y){
 		enemyBoard[x][y].setBackground(Color.darkGray);
+	}
+	public void markPlayerShip(int x, int y){
+		playerBoard[x][y].setBackground(Color.orange);
 	}
 	public void addListener(Controller controller) {
 		Frame.addKeyListener(controller);

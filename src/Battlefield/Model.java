@@ -1,18 +1,40 @@
 package Battlefield;
 
+import java.util.ArrayList;
+
 public class Model {
 	boolean[][] playerBoard = new boolean[10][10];
 	boolean[][] enemyBoard = new boolean[10][10];
 	int xCoordinate;
 	int yCoordinate;
-public Model() {
-	for (int i = 0; i < enemyBoard.length; i++) {
-		for (int j = 0; j < enemyBoard.length; j++) {
-			playerBoard[i][j] = true;
-			enemyBoard[i][j] = true;
+	ArrayList<Ship> ships = new ArrayList<Ship>();
+	ArrayList<Ship> ships1 = new ArrayList<Ship>();
+
+	public Model() {
+		for (int i = 0; i < enemyBoard.length; i++) {
+			for (int j = 0; j < enemyBoard.length; j++) {
+				playerBoard[i][j] = false;
+				enemyBoard[i][j] = false;
+			}
+		}
+		for (int i = 0; i < 10; i++) {
+			ships.add(new Ship());
+		}
+		for (Ship ship : ships) {
+			enemyBoard[ship.x][ship.y] = true;
+		}
+		for (int i = 0; i < 10; i++) {
+			ships1.add(new Ship());
+		}
+		for (Ship ship : ships1) {
+			playerBoard[ship.x][ship.y] = true;
 		}
 	}
-}
+
+	public boolean[][] getPlayerBoard() {
+		return playerBoard;
+	}
+
 	public boolean checkLocationOnPlayerBoard(int x, int y) {
 		return playerBoard[x][y];
 	}
@@ -20,13 +42,13 @@ public Model() {
 	public boolean checkLocationOnEnemyBoard(int x, int y) {
 		return enemyBoard[x][y];
 	}
-	
+
 	public int getxCoordinate() {
 		return xCoordinate;
 	}
 
 	public void setxCoordinate(char xCoordinate) {
-		int  x = Integer.parseInt(xCoordinate+"");
+		int x = Integer.parseInt(xCoordinate + "");
 		this.xCoordinate = x;
 	}
 
@@ -35,7 +57,7 @@ public Model() {
 	}
 
 	public void setyCoordinate(char yCoordinate) {
-		int y = Integer.parseInt(yCoordinate+"");
+		int y = Integer.parseInt(yCoordinate + "");
 		this.yCoordinate = y;
 	}
 
