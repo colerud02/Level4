@@ -70,16 +70,7 @@ public class Model {
 		int x;
 		return 	x = new Random().nextInt(10);
 		
-	}
-	public boolean gameFinished(boolean array[][]){
-	for (int i = 0; i < array.length; i++) {
-		for (int j = 0; j < array.length; j++) {
-			if (array[i][j] == ) {
-				
-			}
-		}
-	}
-		return false;
+	
 		
 	}
 }
