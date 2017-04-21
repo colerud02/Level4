@@ -46,6 +46,12 @@ public class Controller implements KeyListener {
 			} else {
 				veiw.missedShip(veiw.getXint(), veiw.getYint());
 			}
+			if (model.checkLocationOnPlayerBoard(model.randomNumber(), model.randomNumber1()) == true) {
+				veiw.sinkEnemyShip(model.randomNumber(), model.randomNumber());
+			}
+			else{
+				veiw.markEnemyShip(model.randomNumber(), model.randomNumber1());
+			}
 		}
 		if (typed == false) {
 			model.setxCoordinate(e.getKeyChar());

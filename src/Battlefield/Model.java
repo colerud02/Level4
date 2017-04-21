@@ -1,6 +1,7 @@
 package Battlefield;
 
 import java.util.ArrayList;
+import java.util.Random;
 
 public class Model {
 	boolean[][] playerBoard = new boolean[10][10];
@@ -60,5 +61,25 @@ public class Model {
 		int y = Integer.parseInt(yCoordinate + "");
 		this.yCoordinate = y;
 	}
-
+	public int randomNumber(){
+		int x;
+		return 	x = new Random().nextInt(10);
+		
+	}
+	public int randomNumber1(){
+		int x;
+		return 	x = new Random().nextInt(10);
+		
+	}
+	public boolean gameFinished(boolean array[][]){
+	for (int i = 0; i < array.length; i++) {
+		for (int j = 0; j < array.length; j++) {
+			if (array[i][j] == ) {
+				
+			}
+		}
+	}
+		return false;
+		
+	}
 }

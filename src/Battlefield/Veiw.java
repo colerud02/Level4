@@ -93,4 +93,10 @@ public class Veiw {
 	public void addListener(Controller controller) {
 		Frame.addKeyListener(controller);
 	}
+	public void markEnemyShip(int x, int y){
+		playerBoard[x][y].setBackground(Color.darkGray);
+	}
+	public void sinkEnemyShip(int x, int y){
+		playerBoard[x][y].setBackground(Color.red);
+	}
 }
