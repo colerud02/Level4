@@ -2,11 +2,11 @@ package LinkedList;
 
 public class linkedList implements LinkedInterface {
 	Node first;
-	Node temp;
 
 	@Override
 	public void add(Node node) {
-		first = node;
+		Node temp;
+		temp = first;
 		if (first == null) {
 			first = node;
 		} else {
@@ -21,6 +21,7 @@ public class linkedList implements LinkedInterface {
 
 	@Override
 	public Node remove(int num) {
+
 		return null;
 	}
 
@@ -31,6 +32,11 @@ public class linkedList implements LinkedInterface {
 
 	@Override
 	public void print() {
+		Node temp = first;
+		while (temp != null) {
+			System.out.println(temp.getData());
+			temp = temp.getNext();
+		}
 	}
 
 }

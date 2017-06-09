@@ -4,12 +4,11 @@ public class Node {
 	String data;
 	Node next;
 
-	public void setData(String data) {
-
+	public void setData(String data1) {
+		data = data1;
 	}
 
 	public String getData() {
-
 		return data;
 	}
 
