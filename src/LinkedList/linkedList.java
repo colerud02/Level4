@@ -21,13 +21,33 @@ public class linkedList implements LinkedInterface {
 
 	@Override
 	public Node remove(int num) {
-
-		return null;
+		Node temp = null;
+		Node temp1 = null;
+		Node before = null;
+		Node after = null;
+		temp1 = first;
+		for (int i = 0; i < num; i++) {
+			before = temp1;
+			temp = before.getNext();
+			after = temp.getNext();
+			temp1 = temp;
+		}
+		before.setNext(after);
+		return temp;
 	}
 
 	@Override
 	public Node get(int num) {
-		return null;
+		Node temp = first;
+		for (int i = 0; i <= num; i++) {
+			if (i == num) {
+				System.out.println("The data you requsted is: " + temp.getData());
+				return temp;
+			}
+			temp = temp.getNext();
+		}
+
+		return temp;
 	}
 
 	@Override
